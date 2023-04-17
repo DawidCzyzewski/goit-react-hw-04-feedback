@@ -35,6 +35,8 @@ export const App = ({ title, defaultProp }) => {
       case 'bad':
         setBad(prevState => prevState + 1);
         break;
+      default:
+        return;
     }
   };
 
