@@ -1,59 +1,49 @@
-import { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class FeedbackOptions extends Component {
-  static propTypes = {
-    onLeaveFeedback: propTypes.function,
-    options: propTypes.object,
-  };
-  render() {
-    const { onLeaveFeedback, options } = this.props;
-    return (
-      <>
-        {options.map((option, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={event => {
-              onLeaveFeedback(option);
-            }}
-          >
-            {option}
-          </button>
-        ))}
-      </>
-    );
-  }
-}
+export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+  return (
+    <>
+      {options.map((option, i) => (
+        <button
+          key={i}
+          type="button"
+          onClick={event => {
+            onLeaveFeedback(option);
+          }}
+        >
+          {option}
+        </button>
+      ))}
+    </>
+  );
+};
 
-// -------------------------Clear code-----------------------------------------
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func,
+  options: PropTypes.array,
+};
+
+// -------------------------func component code-----------------------------------------
 // -------------------------UNCOMMENT ABROVE OR UNDER--------------------------
-// -------------------------Commented code-------------------------------------
+// -------------------------class component code-------------------------------------
 
 // import { Component } from 'react';
+// import propTypes from 'prop-types';
 
 // export class FeedbackOptions extends Component {
+//   static propTypes = {
+//     onLeaveFeedback: propTypes.function,
+//     options: propTypes.object,
+//   };
 //   render() {
-//     // console.log(this.props);
-
 //     const { onLeaveFeedback, options } = this.props;
-
-//     // const { good, neutral, bad } = options;
-
-//     // options.map((option, i) => {
-//     // console.log(option);
-//     // });
-
 //     return (
 //       <>
-//         {/* {console.log(options)} */}
 //         {options.map((option, i) => (
 //           <button
 //             key={i}
 //             type="button"
 //             onClick={event => {
-//               // console.log(event.target.textContent);
-//               // console.log(option);
-
 //               onLeaveFeedback(option);
 //             }}
 //           >
